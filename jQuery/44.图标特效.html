@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		ul {
+			width: 400px;
+			height: 250px;
+			border: 1px solid black;
+			margin: 100px auto;
+		}
+
+		ul>li {
+			width: 100px;
+			height: 50px;
+			margin-top: 50px;
+			text-align: center;
+			float: left;
+			overflow: hidden;
+		}
+
+		ul>li>span {
+			display: inline-block;
+			width: 24px;
+			height: 24px;
+			background: red;
+			position: relative;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("li").mouseenter(function() {
+				$(this).children('span').animate({
+					top: -50
+				}, 1000, function() {
+					$(this).css("top", "50px").animate({
+						top: 0
+					}, 1000)
+				})
+			});
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+		<li><span></span><p>百度</p></li>
+	</ul>
+</body>
+</html>

@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <style>
+        div {
+            width: 50px;
+            height: 100px;
+            background: red;
+            margin-top: 5px;
+        }
+    </style>
+    <script>
+        $(function () {
+            // :contains(text) 作用：找到包含“text”文本内容的指定元素
+            // :has(selector) 作用：找到包含“selector”子元素的指定元素
+            // :parent 作用：找到有文本内容或有子元素的内容
+            // :empty 作用：找到既没有文本内容又没有子元素的内容
+            var ep = $("div:empty");
+        })
+    </script>
+</head>
+<body>
+    <div></div>
+    <div>我是div</div>
+    <div>他们我是div123</div>
+    <div><span></span></div>
+    <div><p></p></div>
+</body>
+</html>

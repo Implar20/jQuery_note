@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.box {
+			width: 200px;
+			height: 200px;
+			background: red;
+			display: none;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(".btn01").click(function() {
+				$(".box").show(300, function() {
+					//动画执行完毕以后调用
+				});
+			})
+			$(".btn02").click(function() {
+				$(".box").hide(300, function() {
+					//动画执行完毕以后调用
+				});
+			})
+			$(".btn03").click(function() {
+				$(".box").toggle(300, function() {
+					//动画执行完毕以后调用
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<button class="btn01">显示</button>
+	<button class="btn02">隐藏</button>
+	<button class="btn03">切换</button>
+	<div class="box">
+		
+	</div>
+</body>
+</html>

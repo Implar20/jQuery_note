@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		
+	</style>
+	<script>
+		$(function() {
+			/*
+				内部插入
+					- append(content | fn)
+						- 会将元素添加到指定元素内部的最后面
+					- appendTo(content)
+						- 与上面的写法相反
+					- prepend(content | fn)
+						- 会将元素添加到指定元素内部的最前面
+					- prependTo(content)
+						- 与上面的写法相反
+				外部插入
+					- after(content | fn)
+						- 会将元素添加到指定元素外部的后面
+					- before(content | fn)
+						- 会将元素添加到指定元素外部的前面
+					- insertAfter(content)
+						- 与上面的写法相反
+					- insertBefore(content)
+						- 与上面的写法相反
+			 */
+			$("button").click(function() {
+				var li = $("<li>新增的li</li>")
+				$("ul").prepend(li);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>添加节点</button>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+	</ul>
+</body>
+</html>

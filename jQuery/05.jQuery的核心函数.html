@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        /*
+            $()就是jQuery的核心函数
+                1.接受一个函数
+                2.接受一个字符串()
+                    - 字符串选择器
+                    - 代码片段
+                3.接受一个DOM元素
+        */
+       //1.接受一个函数
+       $(function() {
+            console.log(123);
+            // 2.接受一个字符串()
+            //     - 字符串选择器
+            //       返回一个jQuery对象，对象中保存了找到的DOM元素
+            var box01 = $(".box01");
+            var box02 = $("#box02");
+            console.log(box01);
+            console.log(box02);
+            //     - 代码片段
+            //       返回一个jQuery对象， 对象中保存了创建的DOM元素
+            var p = $("<p>我是帅哥！</p>");
+            box01.append(p);
+            // 3.接受一个DOM元素
+            // 会包装成一个jQuery对象返回
+            var ss = document.getElementById("ss");
+            var s = $(ss);
+            console.log(ss);
+            console.log(s);
+       })
+    </script>
+</head>
+<body>
+    <div class="box01"></div>
+    <div id="box02"></div>
+    <span id="ss"></span>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		
+	</style>
+	<script>
+		$(function() {
+			/*
+				clone([Event[, deepEvent]])
+					- 如果传入false就是浅复制， 如果传入true就是深复制
+					- 浅复制只会复制元素，不会复制元素的事件
+					- 深复制会复制元素，而且还会复制元素的事件
+			 */
+			
+			$("button").eq(0).click(function() {
+				var li = $("li:first").clone(false);
+				$("ul").append(li);
+			})
+			$("button").eq(1).click(function() {
+				var li = $("li:first").clone(true);
+				$("ul").append(li);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>浅复制节点</button>
+	<button>深复制节点</button>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+		<li>我是第4个li</li>
+		<li>我是第5个li</li>
+	</ul>
+</body>
+</html>

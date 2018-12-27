@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		div {
+			width: 600px;
+			height: 161px;
+			border: 1px solid black;
+			margin: 100px auto;
+			overflow: hidden;
+		}
+
+		ul {
+			height: 161px;
+			background: #000;
+		}
+
+		ul>li {
+			float: left;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		$(function() {
+			var width = 300 * $("li").length + "px";
+			$("ul").css("width", width);
+
+			var offset = 0;
+			var timer;
+			autoChange(); 
+			$("li").hover(function() {
+				clearInterval(timer);
+				$(this).siblings().fadeTo(100, .5);
+				$(this).fadeTo(10, 1);
+			}, function() {
+				autoChange();
+				$("li").fadeTo(10, 1);
+			})
+
+			function autoChange() {
+				timer = setInterval(function() {
+					offset += -10
+					if(offset <= -1200) {
+						offset = 0;
+					}
+					$("ul").css("marginLeft", offset)
+				}, 50)
+			}
+		})
+	</script>
+</head>
+<body>
+	<div class="wrap">
+		<ul>
+			<li><img src="https://dummyimage.com/300x161/000/fff" alt=""></li>
+			<li><img src="https://dummyimage.com/300x161/red/fff" alt=""></li>
+			<li><img src="https://dummyimage.com/300x161/dsd/fff" alt=""></li>
+			<li><img src="https://dummyimage.com/300x161/saa/fff" alt=""></li>
+			<li><img src="https://dummyimage.com/300x161/000/fff" alt=""></li>
+			<li><img src="https://dummyimage.com/300x161/red/fff" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.box {
+			height: 200px;
+			width: 200px;
+			background: red;
+			display: none;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("button").eq(0).click(function() {
+				$(".box").slideDown(1000, function() {
+					
+				});
+			})
+			$("button").eq(1).click(function() {
+				$(".box").slideUp(1000, function() {
+					
+				});
+			})
+			$("button").eq(2).click(function() {
+				$(".box").slideToggle(1000, function() {
+					
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>展开</button>
+	<button>收起</button>
+	<button>切换</button>
+	<div class="box"></div>
+</body>
+</html>

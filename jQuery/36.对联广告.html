@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			height: 3000px;
+		}
+
+		/*img {
+			display: none;
+		}*/
+
+		.left {
+			float: left;
+			position: fixed;
+			left: 0;
+			top: 200px;
+		}
+
+		.right {
+			float: right;
+			position: fixed;
+			right: 0;
+			top: 200px;
+		}
+	</style>
+	<script>
+		$(function() {
+			//1.监听网页的滚动
+			$(window).scroll(function() {
+				var offs = $("html, body").scrollTop();
+				if (offs >= 500) {
+					$("img").hide(1000)
+				} else {
+					$("img").show(1000)
+				}
+			});
+		})
+	</script>
+</head>
+<body>
+	<img src="https://dummyimage.com/150x350/000/fff" alt="" class="left">
+	<img src="https://dummyimage.com/150x350/red/fff" alt="" class="right">
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.father {
+			height: 200px;
+			width: 200px;
+			background: red;
+		}
+
+		.son {
+			height: 100px;
+			width: 100px;
+			background: blue;
+		}
+	</style>
+	<script>
+		$(function() {
+			/*
+				mouseover
+					- 移入
+				mouseout
+					- 移出
+
+				$(".father").mouseover(function() {
+					console.log("移入");
+				});
+				$(".father").mouseout(function() {
+					console.log("移出");
+				})
+
+				注意点：
+					子元素被移入移除也会触发父元素的移入移出事件
+			 */
+			
+			/*
+				mouseenter
+					- 移入
+				mouseleave
+					- 移出
+
+				注意点：
+					子元素被移入移出不会触发父元素的移入移出事件
+					推荐大家使用
+
+				$(".father").mouseenter(function() {
+					console.log("移入");
+				});
+				$(".father").mouseleave(function() {
+					console.log("移出");
+				});
+			 */
+			
+			/*
+				hover
+					- 当接受两个函数时，即执行移入移出效果
+					- 当接受一个函数时，同样执行移入移出效果
+			 */
+			
+			$(".father").hover(function() {
+					console.log("移入");
+			}, function() {
+					console.log("移出");
+			})
+			
+		})
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+</body>
+</html>

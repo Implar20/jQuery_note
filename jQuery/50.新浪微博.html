@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		html,body {
+			height: 100%;
+			width: 100%;
+		}
+
+		body {
+			background: rgba(0, 0, 0, .5);
+		}
+
+		.nav {
+			width: 100%;
+			height: 50px;
+			background: #000;
+		}
+
+		.content {
+			width: 1000px;
+			height: 1000px;
+			background: #ebdbd4;
+			margin: 80px auto 0 auto;
+		}
+
+		.content>.left {
+			float: left;
+			height: 1000px;
+			width: 160px;
+			background: red;
+		}
+
+		.content>.right {
+			float: right;
+			height: 1000px;
+			width: 240px;
+			background: blue;
+		}
+
+		.content>.center {
+			float: left;
+			width: 600px;
+			height: 168px;
+			background: orange;
+		}
+
+		.center>.comment {
+			width: 570px;
+			height: 73px;
+			background: skyblue;
+			margin-top: 45px;
+			margin-left: 15px;
+			resize: none;
+			border: none;
+			outline: none; 
+		}
+
+		.center>.send {
+			width: 82px;
+			height: 30px;
+			margin-top: 4px;
+			margin-left: 504px;
+			border: none;
+			background: purple;
+			color: #fff;
+		}
+
+		.content>.message {
+			width: 600px;
+			height: 832px;
+			background: #fff;
+			float: left;
+		}
+		.message>.info {
+			padding: 10px 20px;
+			border-bottom: 2px solid #ccc;
+		}
+
+		.info>.text {
+			line-height: 25px;
+			margin-bottom: 10px;
+		}
+
+		.info>.date {
+			width: 100%;
+			overflow: hidden;
+		}
+
+		.date>.time {
+			float: left;
+			font-size: 14px;
+			color: #ccc;
+		}
+
+		.date>.click {
+			float: right;
+			font-size: 14px;
+
+		}
+
+		.click>a {
+			text-decoration: none;
+			display: inline-block;
+			background: red;
+			color: #ccc;
+			padding-left: 25px;
+			margin-left: 10px;
+		}
+		.page {
+			width: 1000px;
+			height: 40px;
+			background: #9f5024;
+			margin: 0 auto;
+			text-align: right;
+			padding: 10px;
+			box-sizing: border-box;
+		}
+
+		.page>a {
+			text-decoration: none;
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			border: 1px solid #ccc;
+			text-align: center;
+			line-height: 25px;
+			color: #2b2b2b;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("body").delegate('.comment', 'propertychange input', function() {
+				if ($(this).val().length > 0) {
+						$(".send").prop("disabled", false);
+				} else {
+					$(".send").prop("disabled", true);
+				}
+			});
+			$("body").delegate('.top', 'click', function() {
+				$(this).text(parseInt($(this).text()) + 1);
+			});
+			$("body").delegate('.down', 'click', function() {
+				$(this).text(parseInt($(this).text()) + 1);
+			});
+			$("body").delegate('.delet', 'click', function() {
+				$(this).parents(".info").remove();
+			});
+			$(".send").click(function() {
+				var text = $(".comment").val();
+				var weibo = createEle(text);
+				$(".message").prepend(weibo);
+			})
+
+			function createEle(text) {
+				var weibo = $("<div class='info'><p class='text'>" + text + "</p><p class='date'><span class='time'>" + fordate() + "</span><span class='click'><a href='javascript:;' class='top'>0</a><a href='javascript:;' class='down'>0</a><a href='javascript:;' class='delet'>删除</a></span></p></div>")
+				return weibo;
+			}
+
+			function fordate() {
+				var date = new Date();
+				var arr = [date.getFullYear()+ "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()];
+				return arr.join();
+			}		
+			fordate()
+		})
+	</script>
+</head>
+<body>
+	<div class="nav"></div>
+	<div class="content">
+		<div class="left"></div>
+		<div class="center">
+			<textarea class="comment"></textarea>
+			<input type="button" value="发布" class="send" disabled>
+		</div>
+		<div class="right"></div>
+		<div class="message">
+			<div class="info">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eveniet aspernatur doloremque, praesentium maxime ut suscipit non deserunt id reprehenderit quae dolore alias natus repudiandae. In officiis vero voluptates, aliquam!</p>
+				<p class="date">
+					<span class="time">2018-10-14 2:54:51</span>
+					<span class="click">
+						<a href="javascript:;" class="top">0</a>
+						<a href="javascript:;" class="down">0</a>
+						<a href="javascript:;" class="delet">删除</a>
+					</span>
+				</p>
+			</div>
+			<div class="info">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eveniet aspernatur doloremque, praesentium maxime ut suscipit non deserunt id reprehenderit quae dolore alias natus repudiandae. In officiis vero voluptates, aliquam!</p>
+				<p class="date">
+					<span class="time">2018-10-14 2:54:51</span>
+					<span class="click">
+						<a href="javascript:;" class="top">0</a>
+						<a href="javascript:;" class="down">0</a>
+						<a href="javascript:;" class="delet">删除</a>
+					</span>
+				</p>
+			</div>
+			<div class="info">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eveniet aspernatur doloremque, praesentium maxime ut suscipit non deserunt id reprehenderit quae dolore alias natus repudiandae. In officiis vero voluptates, aliquam!</p>
+				<p class="date">
+					<span class="time">2018-10-14 2:54:51</span>
+					<span class="click">
+						<a href="javascript:;" class="top">0</a>
+						<a href="javascript:;" class="down">0</a>
+						<a href="javascript:;" class="delet">删除</a>
+					</span>
+				</p>
+			</div>
+			<div class="info">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eveniet aspernatur doloremque, praesentium maxime ut suscipit non deserunt id reprehenderit quae dolore alias natus repudiandae. In officiis vero voluptates, aliquam!</p>
+				<p class="date">
+					<span class="time">2018-10-14 2:54:51</span>
+					<span class="click">
+						<a href="javascript:;" class="top">0</a>
+						<a href="javascript:;" class="down">0</a>
+						<a href="javascript:;" class="delet">删除</a>
+					</span>
+				</p>
+			</div>
+			<div class="info">
+				<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam eveniet aspernatur doloremque, praesentium maxime ut suscipit non deserunt id reprehenderit quae dolore alias natus repudiandae. In officiis vero voluptates, aliquam!</p>
+				<p class="date">
+					<span class="time">2018-10-14 2:54:51</span>
+					<span class="click">
+						<a href="javascript:;" class="top">0</a>
+						<a href="javascript:;" class="down">0</a>
+						<a href="javascript:;" class="delet">删除</a>
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="page">
+		<a href="javascript:;">1</a>
+		<a href="javascript:;">2</a>
+		<a href="javascript:;">3</a>
+	</div>
+</body>
+</html>

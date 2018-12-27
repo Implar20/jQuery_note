@@ -1,0 +1,21 @@
+[
+    {
+        "name": "沙漠骆驼",
+        "singer": "柴仕祺",
+        "album": "Now u see me",
+        "time": "05:38",
+        "link url": "75169536.mp3",
+        "cover": "../../image/T002R300x300M000001ERfY50PCNW6.jpg",
+        "link_lrc": "./song/沙漠骆驼.txt"
+    },
+    
+    {
+        "name": "可不可以",
+        "singer": "柴仕祺",
+        "album": "Now u see me",
+        "time": "04:00",
+        "link url": "643774521.mp3",
+        "cover": "../../image/T002R300x300M000004LHUkq1M5Fgd.jpg",
+        "link_lrc": "./song/可不可以.txt"
+    }
+]

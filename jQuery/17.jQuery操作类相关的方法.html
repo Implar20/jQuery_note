@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .class1 {
+        width: 100px;
+        height: 100px;
+        background: red;
+      }
+
+      .class2 {
+        border: 10px solid #000;
+      }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script type="text/javascript">
+      $(function() {
+	        /*
+	          1.addClass(class | fn)
+	          作用：
+	          	- 添加一个类
+	          	  如果要添加多个，多个类名之间用空格隔开即可
+
+	          2.removeClass([calss | fn])
+	          作用：
+          		- 删除一个类
+	          	如果向删除多个，多个类名之间用空格隔开即可
+
+	          3.toggleClass(class | fn[,sw])
+	          作用：
+	          	- 切换类
+	          	  有就删除， 没有就添加
+	        */
+	       
+	       var btn = document.getElementsByTagName("button");
+	       btn[0].onclick = function() {
+	       		var a = $("div").addClass('class1 class2');
+	       		console.log(a);
+	       }
+	       btn[1].onclick = function() {
+	       		$("div").removeClass('class2');
+	       }
+	       btn[2].onclick = function() {
+	       		$("div").toggleClass('class1 class2');
+	       }
+	       
+	       // setInterval(function() {
+	       // 		$("div").toggleClass('class1 class2');
+	       // }, 10);
+      })
+    </script>
+  </head>
+  <body>
+    <button type="button" name="button">添加类</button>
+    <button type="button" name="button">删除类</button>
+    <button type="button" name="button">切换类</button>
+    <div class="">
+
+    </div>
+  </body>
+</html>

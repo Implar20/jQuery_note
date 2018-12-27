@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            /*
+                1.prop方法
+                    特点：
+                        - 和attr方法一致
+                2.removeProp方法
+                    特点：
+                        - 和removeAttr方法一致
+                注意点：
+                    - prop方法不仅能够操作属性，它还能够操作属性节点
+                    - 官方推荐在操作属性节点时，具有true和fasle两个属性的属性节点，如checked，
+                      selected或者disabled使用prop()，其他的使用attr()
+            */
+            $(".span1").prop("demo", "123");
+            $("span").eq(1).prop("demo", "321");
+            $("span").removeProp("demo")
+            $("span").prop("class", "box");
+
+            console.log($("input").prop("checked")); //true/fasle
+            console.log( $("input").attr("checked")); //checked/undefined
+        })
+    </script>
+</head>
+<body>
+    <span class="span1"></span>
+    <span class="span2"></span>
+    <input type="checkbox" >
+</body>
+</html>

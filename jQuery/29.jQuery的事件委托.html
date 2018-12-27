@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script>
+		/*
+			1.什么是事件委托？
+				- 请被人帮忙做事情，然后将做完的结果反馈给我们
+		 */
+		$(function() {
+			// $("button").click(function() {
+			// 	if(num = parseInt($("li").html())) {
+			// 		num ++;
+			// 	}
+			// 	$("ul").append('<li>我是第' + num + '个li</li>')
+			// })
+
+			
+			// 	在jQuery钟，如果通过核心函数找到的元素不止一个，那么再添加事件的时候，jQuery会便利所有找到的元素，给所有找到的元素添加事件
+			 
+			// $("ul>li").click(function() {
+			// 	console.log($(this).html());
+			// })
+			
+
+			$("button").click(function() {
+				$("ul").append('<li>我是新增的li</li>');
+			})
+
+			// $("ul>li").click(function() {
+			// 	console.log($(this).html());
+			// });
+
+			$("ul").delegate('li', 'click', function(event) {
+				console.log($(this).html());
+			})
+			// var li = document.getElementsByTagName("li");
+			// var index = 0;
+			// var str = li[index].innerText;
+			// var num = str.replace(/^[\d]/ig,"");
+			// console.log(num);
+			
+		})
+	</script>
+</head>
+<body>
+	<ul>
+		<li>我是第1个li</li>
+		<li>我是第2个li</li>
+		<li>我是第3个li</li>
+	</ul>
+	<button>新增一个li</button>
+</body>
+</html>

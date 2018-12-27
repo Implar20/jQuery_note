@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.scroll {
+			width: 200px;
+			height: 400px;
+			overflow: auto;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script>
+		$(function() {
+			var btn = document.getElementsByTagName("button");
+			btn[0].onclick = function() {
+				//获取滚动的偏移位
+				/*
+					注意点：
+						- 为了保证浏览器的兼容，获取网页滚动的偏移位置需要按照如下写法
+						  console.log($("body").scrollTop() + $("html").scrollTop())
+						  兼容IE8 => IE8支持body，普通浏览器支持html
+				 */
+				console.log($(".scroll").scrollTop());
+			}
+			btn[1].onclick = function() {
+				//设置滚动的偏移位
+				/*
+					注意点：
+						- 为了兼容IE8，在设置网页滚动偏移位的时候需要按照如下写法
+						  $("html, body").scrollTop(300)
+						  使用逗号隔开
+				 */
+				$(".scroll").scrollTop(300);
+			}
+		})
+	</script>
+</head>
+<body>
+	<div class="scroll">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. A commodi ex animi magnam minima repellat vel non nesciunt sit, praesentium facere? Atque, neque, facilis. Accusantium eveniet illo mollitia dolores nihil.
+	</div>
+	<button>获取</button>
+	<button>设置</button>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>

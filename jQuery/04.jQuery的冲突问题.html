@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        //1.释放$的使用权
+        //注意点：释放操作必须在编写其他的jQuery代码之前编写
+        //       释放之后就不能再使用$了，只能用就jQuery替代
+        jQuery.noConflict()
+        jQuery(function() {
+            alert(123);
+        })
+        //2.自定义一个访问符号
+        var nj = jQuery.noConflict();
+        nj(function() {
+            alert("qwe");
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

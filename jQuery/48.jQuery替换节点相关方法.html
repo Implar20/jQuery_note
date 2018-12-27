@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		
+	</style>
+	<script>
+		$(function() {
+			/*
+				替换
+					- replaceWith(content | fn)
+						- 替换所有匹配的元素为指定的元素
+					- replaceAll(selector)
+						- 与上面的写法相反
+			 */
+			$("button").click(function() {
+				var h3 = $("<h3>我是标题3</h3>");
+				$("h1").replaceWith(h3);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>替换节点</button>
+	<h1>我是标题1</h1>
+	<h1>我是标题2</h1>
+	<p>我是段落</p>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		.box {
+			width: 440px;
+			height: 298px;
+			border: 1px solid black;
+			margin: 50px auto;	
+		}
+
+		.nav>li {
+			width: 110px;
+			height: 50px;
+			background: orange;
+			text-align: center;
+			line-height: 50px;
+			float: left;
+		}
+		.nav>.current {
+			background: #ccc;
+		}
+
+		.content>li {
+			display: none;
+		}
+
+		.content>.show {
+			display: block;
+		}
+	</style>
+	<script>
+		$(function() {
+			/*$(".nav>li").mouseenter(function() {
+				//修改被移入选项卡的背景颜色
+				$(this).addClass('current');
+				//获取当前移入选项卡的索引
+				var index = $(this).index()
+				//根据索引找到对应的图片
+				var img = $(".content>li").eq(index);
+				//显示找到的图片
+				img.addClass('show');
+
+			});
+			$(".nav>li").mouseleave(function() {
+				//还原选项卡的背景颜色
+				$(this).removeClass('current');
+				//获取当前移出选项卡的索引
+				var index = $(this).index()
+				//根据索引找到对应的图片
+				var img = $(".content>li").eq(index);
+				//隐藏对应的图片
+				img.removeClass('show');
+			});*/
+
+			$(".nav>li").mouseenter(function() {
+				//修改被移入选项卡的背景颜色
+				$(this).addClass('current');
+				//还原选项卡的背景颜色
+				//siblings()方法获取除选中元素之外的同辈元素
+				$(this).siblings().removeClass('current');
+				//获取当前移入选项卡的索引
+				var index = $(this).index()
+				//根据索引找到对应的图片
+				var img = $(".content>li").eq(index);
+				//隐藏当前选中图片的同辈元素
+				img.siblings().removeClass('show');
+				//显示找到的图片
+				img.addClass('show');
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul class="nav">
+			<li class="current">H5+C3</li>
+			<li>jQuery</li>
+			<li>JavaScirpt</li>
+			<li>EcmaSript</li>
+		</ul>
+		<ul class="content">
+			<li class="show"><img src="https://dummyimage.com/440x248/000/000&text=++	" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/ffa/000&text=++" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/000faf/000&text=++" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/sda/000&text=++" alt=""></li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.father {
+			height: 200px;
+			width: 200px;
+			background: red;
+		}
+
+		.son {
+			height: 100px;
+			width: 100px;
+			background: blue;
+		}
+	</style>
+	<script>
+		$(function() {
+			/*
+				想要事件的命名空间有效，必须满足两个条件
+					- 事件是通过on绑定的
+					- 通过trigger触发事件
+			 */
+			$(".son").on("click.csq", function() {
+				alert(123);
+			})
+			$(".father").on("click.lyq", function() {
+				alert(321);
+			})
+
+			$(".son").trigger('click.csq');
+		})
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<a href="http://www.baidu.com">Click me!</a>
+	<form action="http://www.taobao.com">
+		<input type="text">
+		<input type="submit">
+	</form>
+</body>
+</html>

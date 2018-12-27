@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			height: 100px;
+			width: 100px;
+			border: 1px solid black;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script>
+		/*
+			1.html(val | fn)\
+				- 和原生JS中的innerHTML一模一样
+			2.text([val | fn])
+				- 和原生JS中的innerText一模一样
+			2.val([val | fn | arr])
+				- 和原生JS中input的value属性一模一样
+		 */
+		$(function() {
+			var btn = document.getElementsByTagName("button");
+			btn[0].onclick = function() {
+				$("div").html("<p>我是段落<span>我是span</span></p>");
+			}
+			btn[1].onclick = function() {
+				console.log($("div").html());
+			}
+			btn[2].onclick = function() {
+				$("div").text("我是谁");
+			}
+			btn[3].onclick = function() {
+				console.log($("div").text());
+			}
+			btn[4].onclick = function() {
+				$("input").val("请输入内容");
+			}
+			btn[5].onclick = function() {
+				console.log($("input").val());
+			}
+		})
+	</script>
+</head>
+<body>
+	<button>设置html</button>
+	<button>获取html</button>
+	<button>设置text</button>
+	<button>获取text</button>
+	<button>设置value</button>
+	<button>获取value</button>
+	<div></div>
+	<input type="text">
+</body>
+</html>

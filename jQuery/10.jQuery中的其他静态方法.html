@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        /*
+            $.trim():
+            作用：去除字符串两端的空格
+            参数：需要去除空格的字符串
+            返回值：去除空格之后的字符串
+        */
+        // var a = "     str     ";
+        // var v = $.trim(a);
+        // console.log(a);
+        // console.log(v);
+        
+        //真数组
+        var arr = [1, 3, 5, 7, 9];
+        //伪数组
+        var arrlike = {1:3, 2:4, 3:5, 4:6, 5:7, length:8};
+        //对象
+        var obj = {name: "Niko", age: 19};
+        //函数
+        var fun = function() {};
+        //window对象
+        var w = window;
+        /*
+            $.iswindow():
+            作用：判断传入的对象是否是window对象
+            返回值：true/false
+        */
+        var res = $.isWindow(w);
+        /*
+            $.isArray():
+            作用：判断传入的对象是否是真数组
+            返回值：true/false
+        */
+        var arry = $.isArray(arr);
+         /*
+            $.isFunction():
+            作用：判断传入的对象是否是一个函数
+            返回值：true/false
+            注意点：
+                - jQuery本质是一个函数
+                (function(window, undefined) {
+
+                })(window) == function jquery(){}() => jquery()
+        */
+        var fun = $.isFunction();
+        console.log(arry);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

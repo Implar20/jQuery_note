@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.father {
+			width: 200px;
+			height: 200px;
+			background: red;
+		}
+
+		.son {
+			height: 100px;
+			width: 100px;
+			background: blue;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+    	$(function() {
+    		/*
+    			1.什么是事件冒泡？
+    			2.如何阻止事件冒泡
+    				- return false
+    				- event.stopPropagation()
+    			3.什么是默认行为？
+    			4.如何阻止默认行为
+    				- return false
+    				- event.preventDefault()
+    				- <a href="javascript:;"></a>
+    		 */
+    		
+    		$(".father").click(function() {
+    			alert(123)
+    		})
+    		$(".son").click(function(event) {
+    			alert(321)
+    			//取消事件冒泡
+    			//return false
+    			//event.stopPropagation
+    			//return false;
+    			event.stopPropagation();
+    		})
+
+    		$("form").click(function(event) {
+    			//阻止默认行为
+    			//return false;
+    			event.preventDefault()
+    		});
+    	})
+    </script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<a href="http://www.baidu.com">我是百度</a>
+	<form action="http://www.taobao.com">
+		<input type="text">
+		<input type="submit">
+	</form>
+</body>
+</html>

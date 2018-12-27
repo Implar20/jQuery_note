@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.one {
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+
+		.two {
+			width: 500px;
+			height: 10px;
+			background: blue;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("button").eq(0).click(function() {
+				// $(".one").animate({
+				// 	/*
+				// 		在jQuery的{}中可以同时修改多个属性，多个属性的动画也会同时进行
+				// 	 */
+				// 	width: 500,
+				// }, 1000, function() {
+				// 	 stuff to do after animation is complete 
+				// });
+				// $(".one").animate({
+				// 	height: 500
+				// }, 1000, function() {
+				// 	/* stuff to do after animation is complete */
+				// });
+				// 
+				// 
+				/*
+					delay()方法的作用就是告诉系统延迟的时长
+					stop()方法的作用就是立即停止当前的动画，继续执行后续的动画
+						- false，作用 => 同上
+						- false false，作用 => 同上
+						- true，作用 => 立即停止当前和后续所有的动画
+						- true false，作用同上
+						- false true，作用 => 立即完成当前的，继续执行后续的动画
+						- true true，作用 => 立即完成当前的，并且停止后续所有的动画
+				 */
+				$(".one").animate({
+					width: 500
+				}, 1000).animate({
+					height: 500
+				}, 1000).animate({
+					width: 100
+				}, 1000).animate({
+					height: 100
+				}, 1000)
+			})
+			$("button").eq(1).click(function() {
+				$("div").stop(true, true);
+			})
+			//jQuery.fx.off = truel;
+			//jQuery.fx.interval = 100;
+		})
+	</script>
+</head>
+<body>
+	<button>开始动画</button>
+	<button>停止动画</button>
+	<div class="one"></div>
+	<div class="two"></div>
+</body>
+</html>

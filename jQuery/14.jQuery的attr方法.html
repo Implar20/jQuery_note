@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function () {
+            /*
+                1.attr(name|pro|key, val|fn)
+                    作用：
+                        - 获取或者设置属性节点的值
+                        - 可以传递一个参数，也可以传递两个参数
+                        - 如果传递一个参数，代表获取属性节点的值 =>  $("span").attr("class")
+                        - 如果传递两个参数，代表设置属性节点的值 =>  $("span").attr("class", 123)
+                    注意点：
+                        获取节点时 -> 即传递一个参数时
+                        - 无论找到多少个元素，都只会返回第一个元素指定的属性节点的值
+                        设置节点时 -> 即传递两个参数时
+                        - 找到多少个元素就会设置多少个元素
+                        - 如果设置的属性节点不存在， 那么就会新建一个属性节点
+
+                2.removeAttr(name)
+                    作用：
+                        - 删除属性节点
+                    注意点：
+                        - 会删除所有找到的元素指定的属性节点
+                        - 如果想要删除多个属性节点，则就要在属性节点中间加一个空格
+            */
+           $("span").removeAttr("class");
+        })
+    </script>
+</head>
+<body>
+    <span class="span1" name="123"></span>
+    <span class="span2" name="321"></span>
+</body>
+</html>

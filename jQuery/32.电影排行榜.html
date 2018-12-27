@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0；
+			padding: 0;
+		}
+
+		.box {
+			width: 300px;
+			height: 450px;
+			margin: 50px auto;
+			border: 1px solid black;
+		}
+
+		.box>h1 {
+			font-size: 30px;
+			line-height:  35px;
+			color: deeppink;
+			padding-left: 10px;
+		}
+
+		ul {
+			padding: 0;
+		}
+
+		ul>li {
+			list-style: none;
+			padding: 5px 0;
+			border-bottom: 1px dashed #ccc;
+		}
+
+		ul>li:nth-child(-n + 3) span {
+			background: deeppink;
+		}
+
+		ul>li>span {
+			display: inline-block;
+			width: 20px;
+			height: 20px;
+			background: #ccc;
+			text-align: center;
+			line-height: 20px;
+			margin: 0 10px;
+		}
+
+		.content {
+			overflow: hidden;
+			margin-top: 5px;
+			margin-left: 10px;
+			display: none;
+		}
+
+		.content>img {
+			width: 80px;
+			height: 120px;
+			float: left;
+		}
+
+		.content>p {
+			width: 180px;
+			height: 120px;
+			float: right;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+		.current .content {
+			display: block;
+		}
+	</style>
+	<script>
+		$(function() {
+			$("li").mouseenter(function() {
+				$(this).addClass('current');
+			})
+			$("li").mouseleave(function() {
+				$(this).removeClass('current');
+			})
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<h1>电影排行榜</h1>
+		<ul>
+			<li><span>1</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+			<li><span>2</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+			<li><span>3</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+			<li><span>4</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+			<li><span>5</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+			<li><span>6</span>电影名称
+				<div class="content">
+					<img src="https://dummyimage.com/150x200/000/000&text=++" alt="">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, neque? Veniam esse nemo labore amet? Dolores voluptatibus pariatur placeat corrupti vitae, nihil architecto.</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+</body>
+</html>

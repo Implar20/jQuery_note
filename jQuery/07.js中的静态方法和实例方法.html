@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        $(function() {
+            //1.定义一个类
+            function classA() {
+
+            }
+            //2.给这个类添加一个静态方法
+            //直接添加给类的就是静态方法
+            classA.setMethod = function() {
+                alert(123);
+            }
+            //静态方法通过类名调用
+            classA.setMethod();
+            //3.给这个类添加一个实例方法
+            classA.prototype.setMath = function() {
+                alert(321);
+            }
+            //实例方法通过类的实例调用
+            //创建一个实例(创建一个对象)
+            var a = new classA();
+            //通过实例调用实例方法
+            a.setMath();
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

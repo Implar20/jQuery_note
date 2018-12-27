@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.father {
+			height: 200px;
+			width: 200px;
+			background: red;
+		}
+
+		.son {
+			height: 100px;
+			width: 100px;
+			background: blue;
+		}
+	</style>
+	<script>
+		$(function() {
+			/*
+				trigger
+					- 如果使用trigger来自动触发事件，会触发事件冒泡
+					- 会触发默认行为
+					注意点：
+						- 如果想要用trigger来触发a标签中的默认事件，则需要将点击内容放在span里，由点击span时触发的事件冒泡至a，进行跳转
+				triggerHandler
+					- 如果使用triggerHandler来触发事件，则不会触发事件
+					- 不会触发默认行为
+			 */
+			$(".son").click(function() {
+				alert("son");
+			})
+			$(".father").click(function() {
+				alert("father");
+			})
+			//$(".father").trigger('click');
+			$(".father").triggerHandler('click');
+
+			$("input[type='submit']").click(function() {
+				alert("submit");
+			})
+			//$("input[type='submit']").trigger('click');
+			$("input[type='submit']").triggerHandler('click');
+		})
+	</script>
+</head>
+<body>
+	<div class="father">
+		<div class="son"></div>
+	</div>
+	<a href="http://www.baidu.com">Click me!</a>
+	<form action="http://www.taobao.com">
+		<input type="text">
+		<input type="submit">
+	</form>
+</body>
+</html>

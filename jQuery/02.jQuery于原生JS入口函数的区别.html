@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <script>
+        // window.onload = function() {
+        //     var img = document.getElementsByTagName("img")[0];
+        //     var width = getComputedStyle(img).width;
+        //     console.log("onload", width);
+        // }
+        
+        // $(document).ready(function() {
+        //     var img = $("img");
+        //     var width = img.width();
+        //     console.log("ready", width);
+        // })
+
+        /*
+            jQuery编写多个入口函数，后面的不会覆盖前面的，而原生JavaScript则会覆盖
+        */
+        // window.onload = function() {
+        //     alert(123);
+        // }
+        // window.onload = function() {
+        //     alert(321);
+        // }
+
+        // $(document).ready(function() {
+        //     alert(123);
+        // })
+        // $(document).ready(function() {
+        //     alert(321);
+        // })
+    </script>
+</head>
+<body>
+    <img src="https://www.bootcdn.cn/assets/img/jquery.svg?1538427312549" alt="">
+</body>
+</html>

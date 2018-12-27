@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script>
+		$(function() {
+			/*
+				- off()方法如果不传递参数，会移除所有的事件
+				- off()方法如果传递一个参数，会移除所有指定内容的事件
+				- off()方法如果传递两个参数，会移除所有指定类型的指定事件
+			 */
+			$("button").click(test);
+			$("button").click(test1);
+
+			$("button").mouseleave(function() {
+				alert("what up!");
+			})
+			$("button").mouseenter(function() {
+				alert("what the fuck!");
+			})
+
+			function test() {
+				alert(123);
+			}
+			function test1() {
+				alert(321);
+			}
+
+			// $("button").off();
+			// $("button").off("click");
+			$("button").off("click",test);
+
+		})
+	</script>
+</head>
+<body>
+	<button>Click me!</button>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+		}
+
+		.box {
+			width: 440px;
+			height: 248px;
+			margin: 100px auto;
+			position: relative;
+		}
+
+		.nav>li {
+			width: 20px;
+			height: 20px;
+			background: orange;
+			float: left;
+			margin: 0 5px;
+			line-height: 20px;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		.nav {
+			position: absolute;
+			bottom: 20px;
+			right: 20px;
+		}
+
+		.nav>.current {
+			background: #ccc;
+		}
+
+		.content>li {
+			display: none;
+		}
+
+		.content>.show {
+			display: block;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(".nav>li").mouseenter(function() {
+				$(this).addClass('current');
+				$(this).siblings().removeClass('current');
+				var index = $(this).index();
+				var img = $(".content>li").eq(index);
+				img.siblings().removeClass('show');
+				img.addClass('show');
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="box">
+		<ul class="content">
+			<li class="show"><img src="https://dummyimage.com/440x248/000/000&text=++	" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/ffa/000&text=++" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/000faf/000&text=++" alt=""></li>
+			<li><img src="https://dummyimage.com/440x248/sda/000&text=++" alt=""></li>
+		</ul>
+		<ul class="nav">
+			<li class="current">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</ul>
+	</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		div {
+			width: 100px;
+			height: 100px;
+			margin-top: 10px;
+			background: red;
+		}
+
+		.two {
+			background: blue;
+		}
+	</style>
+	<script>
+		/*
+			animate
+				参数：
+					- {}接受一个对象，对象里面的属性就是动画的效果
+					- 时长
+					- 动画节奏 => 动画节奏可以在所有jQuery动画中实现
+						- 匀速
+						- 缓动 => 开始慢，中间快，结尾慢 //默认缓动swing
+					- 回调函数
+		 */
+		$(function() {
+			$("button").eq(0).click(function() {
+				$(".one").animate({
+					marginLeft : 500},
+					5000, "linear", function() {
+					/* stuff to do after animation is complete */
+				});
+				// $(".one").animate({
+				// 	marginTop: 5000,
+				// 	width: 500},
+				// 	5000, function() {
+				// 	/* stuff to do after animation is complete */
+				// });
+				$(".two").animate({
+					marginLeft: 500},
+					5000, function() {
+					/* stuff to do after animation is complete */
+				});
+			})
+			$("button").eq(1).click(function() {
+				$(".one").animate({
+					width: "+=100",
+					},
+					1000, function() {
+					/* stuff to do after animation is complete */
+				});
+			})
+			$("button").eq(2).click(function() {
+				$(".one").animate({
+					// width: "hide",
+					width: "toggle"
+					},
+					1000, function() {
+					/* stuff to do after animation is complete */
+				});
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>操作属性</button>
+	<button>累加属性</button>
+	<button>关键字</button>
+	<div class="one"></div>
+	<div class="two"></div>
+</body>
+</html>

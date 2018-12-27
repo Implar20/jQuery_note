@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+    <style media="screen">
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            width: 320px;
+            height: 480px;
+            background: skyblue;
+            margin: 50px auto;
+            position: relative;
+        }
+
+        .container>h1 {
+            color: #fff;
+            margin-left: 60px;
+        }
+
+        .container>.progress {
+            width: 180px;
+            height: 16px;
+            border-radius: 7px;
+            background: #000;
+            position: absolute;
+            top: 66px;
+            left: 63px; 
+        }
+
+        .container>.fake {
+            width: 180px;
+            height: 16px;
+            border-radius: 7px;
+            background: orange;
+            position: absolute;
+            top: 66px;
+            left: 63px; 
+        }
+
+        .container>.btn {
+            width: 150px;
+            line-height: 35px;
+            text-align: center;
+            color: #Fff;
+            background: linear-gradient(#E55C3D,#C50000);
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            position: absolute;
+            top: 320px;
+            left: 50%;
+            margin-left: -75px;
+            cursor: pointer;
+        }
+
+        .container>.rules {
+            width: 100%;
+            height: 20px;
+            background: #ccc;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .container>.rule {
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding-top: 100px;
+            box-sizing: border-box;
+            text-align: center;
+            display: none;
+        }
+
+        .rule>p {
+            line-height: 50px;
+            color: #Fff;
+        }
+
+        .rule>a {
+            color: red;
+            text-decoration: none;
+        }
+
+        .container>.mask {
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,.5);
+            position: absolute;
+            left: 0;
+            top: 0;
+            padding-top: 200px;
+            box-sizing: border-box;
+            text-align: center;
+            display: none;
+        }
+
+        .mask>h1 {
+            color: #ff4500;
+            text-shadow: 3px 3px 0 #fff;
+        }
+
+        .mask>button {
+            background: linear-gradient(#74ACCF,#007DDC);
+            width: 150px;
+            line-height: 35px;
+            text-align: center;
+            color: #fff;
+            border-radius: 20px;
+            outline: none;
+            border: none;
+            font-size: 20px;
+            position: absolute;
+            top: 320px;
+            margin-left: -75px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function() {
+            $(".rules").click(function() {
+                $(".rule").stop().fadeIn(100);
+            })
+            $(".rule>a").click(function() {
+                $(".rule").stop().fadeOut(100);
+            })
+            $(".btn").click(function() {
+                $(this).stop().fadeOut(100);
+                slipChange();
+                strAnimation();
+            })
+            $(".mask>button").click(function() {
+                $(".mask").fadeOut(100);
+                slipChange();
+            })
+
+
+            function slipChange() {
+                $(".fake").css("width", "180px");
+                var timer = setInterval(function() {
+                    var proWidth = $(".fake").width();
+                    proWidth -=1;
+                    $(".fake").css({width: proWidth});
+                    if (proWidth <= 0) {
+                        clearInterval(timer);
+                        $(".mask").stop().fadeIn(100);
+                    }
+                }, 10)
+            }
+
+            function strAnimation() {
+                var div = $("<div></div>");
+                div.css({
+                    width: 40,
+                    height: 40,
+                    background: 'red',
+                    position: 'absolute',
+                    left: 100,
+                    top: 115
+                });
+            }
+        })
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>0</h1>
+      <div class="progress"></div>
+      <div class="fake"></div>
+      <button class="btn">开始游戏</button>
+      <div class="rules">游戏规则</div>
+      <div class="rule">
+          <p>游戏规则：</p>
+          <p>1.游戏时间：60s</p>
+          <p>2.拼手速，殴打灰太狼+10分</p>
+          <p>3.殴打小灰灰-10分</p>
+          <a href="#">【关闭】</a>
+      </div>
+      <div class="mask">
+          <h1>GAME OVER</h1>
+          <button>重新开始</button>
+      </div>
+    </div>
+  </body>
+</html>

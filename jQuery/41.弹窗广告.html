@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+		}
+
+		.ad {
+			width: 380px;
+			height: 240px;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			display: none;
+		}
+
+		img {
+			height: 100%;
+			width: 100%;
+		}
+
+		.ad>span {
+			display: inline-block;
+			width: 30px;
+			height: 30px;
+			background: red;
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	</style>
+	<script>
+		$(function() {
+			$(".ad>span").click(function() {
+				$(".ad").remove();
+
+			})
+
+			//函数嵌套法
+			// $(".ad").slideDown(1000, function() {
+			// 	$(".ad").fadeOut(1000, function() {
+			// 		$(".ad").fadeIn(1000);
+			// 	});
+			// });
+			
+			//动画队列法
+			$(".ad").stop().slideDown(1000).fadeOut(1000).fadeIn(1000);
+		})
+	</script>
+</head>
+<body>
+	<div class="ad">
+		<img src="https://dummyimage.com/400x250/000/fff" alt="">
+		<span></span>
+	</div>
+</body>
+</html>

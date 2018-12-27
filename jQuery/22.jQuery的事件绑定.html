@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<script>
+		$(function() {
+			/*
+				jQuery中有两种绑定事件的方式
+				1.eventName(fn)
+					- 因为有提示，因此编码效率略高
+					- 不分时间jQuery没有实现，所以不能添加
+				2.on(eventName, fn)
+					- 需要输入字符串，因此没有提示，容易出错，因此编码效率略低
+					- 所有JS事件都可以添加
+
+				注意点：
+					- 可以添加多个相同或者不同类型的事件，不会覆盖
+			 */
+			
+			$("button").click(function() {
+				alert(123);
+			})
+
+			$("button").on("click", function() {
+				alert(321);
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>Click me!</button>
+</body>
+</html>

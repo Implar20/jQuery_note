@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.4/jquery.js"></script>
+	<style>
+		
+	</style>
+	<script>
+		$(function() {
+			/*
+				删除节点
+					- remove([expr])
+						- 删除指定元素
+					- empty()
+						- 删除指定元素的内容和子元素，指定元素自身不会被删除
+					- detach([expr])
+						- 和remove一模一样
+			 */
+			$("button").click(function() {
+				$("li").remove(".item");
+			})
+		})
+	</script>
+</head>
+<body>
+	<button>删除节点</button>
+	<ul>
+		<li class="item">我是第1个li</li>
+		<li>我是第2个li</li>
+		<li class="item">我是第3个li</li>
+		<li>我是第4个li</li>
+		<li class="item">我是第5个li</li>
+	</ul>
+	<div>
+		我是div
+		<p>我是一个段落</p>
+	</div>
+</body>
+</html>
